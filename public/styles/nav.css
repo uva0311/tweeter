@@ -3,7 +3,6 @@
   color: #e8fdff;
   position: fixed;
   height: 80px;
-  width: all;
   top: 0;
   left: 0;
   right: 0;
@@ -11,7 +10,17 @@
   padding-right: 2em;
 }
 
-.logo {
+#nav-bar .logo {
+  float: left;
   width: 80px;
   height: 80px;
+}
+
+#nav-bar .header {
+  margin-left: 10px;
+  float: left;
+  width: 95px;
+  height: 80px;
+  font-size: 30px;
+  line-height: 2.5;
 }

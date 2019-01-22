@@ -43,11 +43,6 @@
   transition: 0.3s;
 }
 
-/* For fade in amination */
-.tweet-container:hover {
-  opacity: 1;
-}
-
 .tweet-header {
   background-color: #eee;
   border-radius: 10px 10px 0px 0px;
@@ -72,16 +67,31 @@
   margin-top: 5px;
 }
 
+/* tweet body styling */
 .tweet-body {
   padding: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
 
 }
 
+/* footer nav bar styling */
 .tweet-footer {
   border-top: 1px solid #DCDCDC;
   font-size: 12px;
   margin-top: 61px;
   padding: 10px;
+}
+
+.fa-flag, .fa-retweet, .fa-heart {
+  float: right;
+  margin-right: 5px;
+  color: #00ba9d;
+}
+
+/* For fade in amination */
+.tweet-container:hover {
+  opacity: 1;
 }
 
 

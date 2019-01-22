@@ -7,6 +7,7 @@
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
@@ -41,7 +42,7 @@
       <section class="tweet-container">
         <article class="tweet">
           <header class="tweet-header">
-            <!-- nav bar on existing tweets, to show username and user avatar -->
+            <!-- nav bar on existing tweets header, to show username and user avatar -->
             <nav class="nav-bar">
                 <img class="avatar" src="/images/bird.png">
                 <span class="name">name</span>
@@ -49,7 +50,13 @@
             </nav>
           </header>
           <p class="tweet-body">I am just a dummy text</p>
-          <footer class="tweet-footer">This is tweet footer</footer>
+          <!-- nav bar on existing tweets footer, to show how many days the tweet been posted, as well the share/retweet/like icons -->
+          <footer class="tweet-footer">
+                <span class="day-posted">10 days ago</span>
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-retweet"></i>
+                <i class="fas fa-flag"></i>
+          </footer>
         </article>
       </section>
     </main>

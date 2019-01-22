@@ -1,4 +1,6 @@
-.new-tweet {
+/* Styling in common: new-tweet, existing tweets */
+
+.new-tweet, .tweet-container {
   position: relative;
   background-color: #eee;
   border-radius: 10px;
@@ -7,6 +9,8 @@
   padding: 0 10px 10px;
   top: 40px;
 }
+
+/* Styling for making new tweet*/
 
 .new-tweet h2 {
   margin-top: 10px;
@@ -28,3 +32,49 @@
   font-style: italic;
   margin-right: 10px;
 }
+
+/* Following is for existing tweet styling */
+.tweet-container {
+  margin-top: 1em;
+  background-color: #FFFFFF;
+  padding: 0;
+}
+
+
+.tweet-header {
+  background-color: #eee;
+  border-radius: 10px 10px 0px 0px;
+  padding: 10px;
+}
+
+/* header nav bar styling */
+.tweet-header .avatar {
+  width: 40px;
+  height: 40px;
+}
+
+.tweet-header .name {
+  position: absolute;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.tweet-header .username {
+  float: right;
+  margin-top: 5px;
+}
+
+.tweet-body {
+  padding: 10px;
+
+}
+
+.tweet-footer {
+  border-top: 1px solid #DCDCDC;
+  font-size: 12px;
+  margin-top: 61px;
+  padding: 10px;
+}
+
+

@@ -38,8 +38,15 @@
   margin-top: 1em;
   background-color: #FFFFFF;
   padding: 0;
+  /* For fade in amination */
+  opacity: 0.5;
+  transition: 0.3s;
 }
 
+/* For fade in amination */
+.tweet-container:hover {
+  opacity: 1;
+}
 
 .tweet-header {
   background-color: #eee;

@@ -25,3 +25,16 @@
   font-size: 30px;
   line-height: 2.5;
 }
+
+#nav-bar #compose {
+  background-color: #ffffff;
+  border-radius: 10px 10px 10px 10px;
+  color: #00ba9d;
+  border: 1px solid black;
+  float: right;
+  margin-top: 10px;
+  font-size: 20px;
+  width: 120px;
+  height: 60px;
+  display: block;
+}

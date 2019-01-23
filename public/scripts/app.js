@@ -63,6 +63,11 @@ $(document).ready(function() {
   }
 
   function createTweetElement(tweet) {
+
+    // converting timestamp to actual time difference
+    let currentTimeStamp = new Date().getTime();
+    let tweetTimeStamp = tweet.created_at;
+
     // putting down the html template and return as template string
     let $tweet = `
       <article class="tweet">
@@ -73,9 +78,9 @@ $(document).ready(function() {
               <span class="username">${tweet.user.handle}</span>
           </nav>
         </header>
-        <p class="tweet-body">${tweet.user.handle}</p>
+        <p class="tweet-body">${tweet.content.text}</p>
         <footer class="tweet-footer">
-              <span class="day-posted">10 days ago</span>
+              <span class="day-posted">${timeDiff(currentTimeStamp, tweetTimeStamp)}</span>
               <i class="fas fa-heart"></i>
               <i class="fas fa-retweet"></i>
               <i class="fas fa-flag"></i>
@@ -83,6 +88,36 @@ $(document).ready(function() {
       </article>
     `;
     return $tweet;
+  }
+
+  // helper function to convert time stamps into time difference
+  function timeDiff(currentTimeStamp, tweetTimeStamp) {
+    const difference = currentTimeStamp - tweetTimeStamp;
+    const secondsDiff = Math.floor(difference/1000);
+    const minutesDiff = Math.floor(secondsDiff/60);
+    const hoursDiff = Math.floor(minutesDiff/60);
+    const daysDiff = Math.floor(hoursDiff/24);
+    const monthsDiff = Math.floor(daysDiff/30);
+    const yearsDiff = Math.floor(monthsDiff/12);
+
+    if(yearsDiff > 1){
+      return `Posted ${yearsDiff} years ago`
+    }
+    if(monthsDiff > 1){
+      return `Posted ${monthsDiff} month(s) ago`
+    }
+    if(daysDiff > 1){
+      return `Posted ${daysDiff} day(s) ago`
+    }
+    if(hoursDiff > 1){
+      return `Posted ${hoursDiff} hour(s) ago`
+    }
+    if(minutesDiff > 1){
+      return `Posted ${minutesDiff} minute(s) ago`
+    }
+    if(secondsDiff > 1){
+      return `Posted ${secondsDiff} second(s) ago`
+    }
   }
 
   renderTweets(data);

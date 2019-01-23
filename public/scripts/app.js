@@ -7,6 +7,14 @@ $(document).ready(function() {
 
   loadTweets();
   tweetSubmit();
+  autoFocus();
+
+  // for on click auto focus on form textarea
+  function autoFocus() {
+    $('#compose').click(function() {
+      $('textarea[name="text"]').focus();
+    });
+  }
 
   // compse new tweet via form submit
   function tweetSubmit() {

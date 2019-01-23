@@ -1,11 +1,11 @@
 /* Styling in common: new-tweet, existing tweets */
 
-.new-tweet, .tweet-container {
+.new-tweet {
   position: relative;
   background-color: #eee;
   border-radius: 10px;
   border: 1px solid #DCDCDC;
-  margin: 0 2em;
+  margin: 1em 2em;
   padding: 0 10px 10px;
   top: 40px;
 }
@@ -35,9 +35,16 @@
 
 /* Following is for existing tweet styling */
 .tweet-container {
-  margin-top: 1em;
   background-color: #FFFFFF;
   padding: 0;
+}
+
+.tweet {
+  position: relative;
+  border-radius: 10px;
+  border: 1px solid #DCDCDC;
+  margin: 1em 2em;
+  top: 40px;
   /* For fade in amination */
   opacity: 0.5;
   transition: 0.3s;
@@ -72,7 +79,6 @@
   padding: 10px;
   margin-left: 10px;
   margin-right: 10px;
-
 }
 
 /* footer nav bar styling */
@@ -90,7 +96,7 @@
 }
 
 /* For fade in amination */
-.tweet-container:hover {
+.tweet:hover {
   opacity: 1;
 }
 

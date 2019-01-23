@@ -3,8 +3,47 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-
 $(document).ready(function() {
+
+  loadTweets();
+  tweetSubmit();
+
+  // compse new tweet via form submit
+  function tweetSubmit() {
+    $('form').submit(function(event) {
+        let tweetLength = $('textarea[name="text"]').val().length;
+        if(tweetLength <= 140 && tweetLength > 0) {
+            event.preventDefault();
+            $.ajax({
+                method: 'POST',
+                url: '/tweets',
+                data: $('textarea[name="text"]').serialize(),
+            }).success(function(data) {
+                $('.tweet-container').empty().load(loadTweets());
+              });
+        } else if(tweetLength > 140) {
+            console.log(tweetLength);
+            alert('Tweet is too long!');
+            return false;
+        } else if(tweetLength == 0) {
+            console.log(tweetLength);
+            alert('There is no tweet to submit.');
+            return false;
+        }
+    });
+  }
+
+  // function to utilize ajax call to load existing tweets
+  function loadTweets() {
+    $.ajax({
+      method: 'GET',
+      url: '/tweets',
+      dataType: 'json'
+    }).success(function(data) {
+      // set callback function
+      renderTweets(data);
+    });
+  }
 
   function renderTweets(tweets) {
     // loops through tweets
@@ -15,7 +54,6 @@ $(document).ready(function() {
   }
 
   function createTweetElement(tweet) {
-
     // converting timestamp to actual time difference
     let currentTimeStamp = new Date().getTime();
     let tweetTimeStamp = tweet.created_at;
@@ -30,7 +68,7 @@ $(document).ready(function() {
               <span class="username">${tweet.user.handle}</span>
           </nav>
         </header>
-        <p class="tweet-body">${tweet.content.text}</p>
+        <p class="tweet-body">${escape(tweet.content.text)}</p>
         <footer class="tweet-footer">
               <span class="day-posted">${timeDiff(currentTimeStamp, tweetTimeStamp)}</span>
               <i class="fas fa-heart"></i>
@@ -74,20 +112,11 @@ $(document).ready(function() {
     }
   }
 
-  function loadTweets() {
-    $.ajax({
-      method: 'GET',
-      url: '/tweets',
-      dataType: 'json'
-    }).success(function(data) {
-      renderTweets(data);
-    });
+  function escape(str) {
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
   }
-
-  loadTweets();
-
 });
-
-
 
 

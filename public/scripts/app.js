@@ -100,6 +100,8 @@ $(document).ready(function() {
     const monthsDiff = Math.floor(daysDiff/30);
     const yearsDiff = Math.floor(monthsDiff/12);
 
+    // depends on how far the tweet was posted,
+    // returns to a proper time difference to display
     if(yearsDiff > 1){
       return `Posted ${yearsDiff} years ago`
     }
@@ -122,6 +124,7 @@ $(document).ready(function() {
 
   renderTweets(data);
 });
+
 
 
 

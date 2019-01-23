@@ -26,7 +26,7 @@
   line-height: 2.5;
 }
 
-#nav-bar #compose {
+#compose {
   position: relative;
   background-color: #ffffff;
   border-radius: 10px 10px 10px 10px;
@@ -38,4 +38,9 @@
   width: 120px;
   height: 60px;
   display: block;
+  cursor: pointer;
+}
+
+#compose:active {
+  color: #000000;
 }

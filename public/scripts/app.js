@@ -8,11 +8,18 @@ $(document).ready(function() {
   loadTweets();
   tweetSubmit();
   autoFocus();
+  toggleForm();
 
   // for on click auto focus on form textarea
   function autoFocus() {
     $('#compose').click(function() {
       $('textarea[name="text"]').focus();
+    });
+  }
+
+  function toggleForm() {
+    $('#compose').click(function() {
+      $('.new-tweet').slideToggle("slow");
     });
   }
 

@@ -27,6 +27,7 @@
 }
 
 #nav-bar #compose {
+  position: relative;
   background-color: #ffffff;
   border-radius: 10px 10px 10px 10px;
   color: #00ba9d;

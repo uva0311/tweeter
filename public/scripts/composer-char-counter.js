@@ -13,6 +13,9 @@ $(document).ready(function() {
       $(selector).css('color', 'red');
     } else {
       $(selector).css('color', 'black');
+      // set the error message to be hidden, in case user try to enter
+      // a valid tweet again
+      $('.isa_error').css('opacity','0');
     }
   }
 });

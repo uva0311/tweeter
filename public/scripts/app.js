@@ -17,6 +17,7 @@ $(document).ready(function() {
     });
   }
 
+  // show or hide new tweet compose form when clicking compose button
   function toggleForm() {
     $('#compose').click(function() {
       $('.new-tweet').slideToggle("slow");
@@ -36,13 +37,12 @@ $(document).ready(function() {
             }).success(function(data) {
                 $('.tweet-container').empty().load(loadTweets());
               });
+        // cases where the tweet has too many or no characters
         } else if(tweetLength > 140) {
-            console.log(tweetLength);
-            alert('Tweet is too long!');
+            $('.isa_error').css('opacity','1').text('Tweet is too long.');
             return false;
         } else if(tweetLength == 0) {
-            console.log(tweetLength);
-            alert('There is no tweet to submit.');
+            $('.isa_error').css('opacity','1').text('There is no tweet to submit.');
             return false;
         }
     });

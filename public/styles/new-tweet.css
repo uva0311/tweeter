@@ -34,6 +34,13 @@
   margin-right: 10px;
 }
 
+/* styling for error message */
+.isa_error {
+    color: #D8000C;
+    font-size:1em;
+    opacity: 0;
+}
+
 /* Following is for existing tweet styling */
 .tweet-container {
   background-color: #FFFFFF;

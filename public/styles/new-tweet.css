@@ -89,10 +89,16 @@
   padding: 10px;
 }
 
+.avatar {
+  border-radius: 10px 10px 10px 10px;
+}
+
 .fa-flag, .fa-retweet, .fa-heart {
   float: right;
   margin-right: 5px;
   color: #00ba9d;
+  /*opacity: 1;
+  transition: 0.3s;*/
 }
 
 /* For fade in amination */

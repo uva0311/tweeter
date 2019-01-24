@@ -28,7 +28,7 @@ body {
  main {
   position: relative;
   width: 450px;
-  height: 575px;
   margin: 140px auto 0;
   background-color: #ffffff;
+  padding-bottom: 50px;
  }

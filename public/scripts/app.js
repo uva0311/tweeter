@@ -10,7 +10,6 @@ $(document).ready(function() {
   tweetSubmit();
   toggleForm();
   autoFocus();
-  updateCount();
 
   // for on click auto focus on form textarea
   function autoFocus() {
@@ -42,6 +41,8 @@ $(document).ready(function() {
       $('.isa_error').css('opacity','0');
     }
   }
+
+  updateCount();
 
   // compse new tweet via form submit
   function tweetSubmit() {
@@ -142,6 +143,8 @@ $(document).ready(function() {
       return `Posted ${minutesDiff} minute(s) ago`
     }
     if(secondsDiff > 1){
+      return `Posted ${secondsDiff} second(s) ago`
+    } else {
       return `Posted ${secondsDiff} second(s) ago`
     }
   }

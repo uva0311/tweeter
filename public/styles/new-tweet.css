@@ -7,7 +7,7 @@
   border: 1px solid #DCDCDC;
   margin: 1em 2em;
   padding: 0 10px 10px;
-  top: 40px;
+  top: 20px;
   display: none;
 }
 
@@ -20,7 +20,7 @@
 
 .new-tweet textarea {
   width: 100%;
-  height: 100px;
+  height: 80px;
 }
 
 .new-tweet input, span {
@@ -44,7 +44,8 @@
 /* Following is for existing tweet styling */
 .tweet-container {
   background-color: #FFFFFF;
-  padding: 0;
+  position: relative;
+  height: 100%;
 }
 
 .tweet {
@@ -52,7 +53,7 @@
   border-radius: 10px;
   border: 1px solid #DCDCDC;
   margin: 1em 2em;
-  top: 40px;
+  top: 20px;
   /* For fade in amination */
   opacity: 0.5;
   transition: 0.3s;
@@ -66,8 +67,8 @@
 
 /* header nav bar styling */
 .tweet-header .avatar {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
 }
 
 .tweet-header .name {
@@ -84,7 +85,7 @@
 
 /* tweet body styling */
 .tweet-body {
-  padding: 10px;
+  padding: 5px 10px;
   margin-left: 10px;
   margin-right: 10px;
 }
@@ -93,8 +94,8 @@
 .tweet-footer {
   border-top: 1px solid #DCDCDC;
   font-size: 12px;
-  margin-top: 61px;
-  padding: 10px;
+  margin-top: 31px;
+  padding: 5px 10px;
 }
 
 .avatar {
@@ -113,5 +114,4 @@
 .tweet:hover {
   opacity: 1;
 }
-
 

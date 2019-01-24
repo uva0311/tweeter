@@ -42,8 +42,6 @@ $(document).ready(function() {
     });
   }
 
-
-
   // compse new tweet via form submit
   function tweetSubmit() {
     $('form').submit(function(event) {

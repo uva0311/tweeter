@@ -1,14 +1,16 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
+
 $(document).ready(function() {
+  // variables defined for counting new tweet characters
+  // and the maximum chars every tweet has should be 140 characters
+  // see updatedCount() below for details
+  let tweetChar = 140;
+  $('.new-tweet textarea').keyup(updateCount);
 
   loadTweets();
   tweetSubmit();
-  autoFocus();
   toggleForm();
+  autoFocus();
+  updateCount();
 
   // for on click auto focus on form textarea
   function autoFocus() {
@@ -20,8 +22,25 @@ $(document).ready(function() {
   // show or hide new tweet compose form when clicking compose button
   function toggleForm() {
     $('#compose').click(function() {
-      $('.new-tweet').slideToggle("slow");
+      $('.new-tweet').slideToggle("fast");
     });
+  }
+
+  // counting number of characters from the input tweet
+  function updateCount() {
+    const charCount = '.new-tweet .counter';
+    let tweetCharLeft = tweetChar - $(this).val().length;
+
+    $(charCount).text(tweetCharLeft);
+    // display tweet character count on new tweet compose form
+    if($(this).val().length > 140){
+      $(charCount).css('color', 'red');
+    } else {
+      $(charCount).css('color', 'black');
+      // set the error message to be hidden, in case user try to enter
+      // a valid tweet again
+      $('.isa_error').css('opacity','0');
+    }
   }
 
   // compse new tweet via form submit
@@ -108,7 +127,7 @@ $(document).ready(function() {
     // depends on how far the tweet was posted,
     // returns to a proper time difference to display
     if(yearsDiff > 1){
-      return `Posted ${yearsDiff} years ago`
+      return `Posted ${yearsDiff} year(s) ago`
     }
     if(monthsDiff > 1){
       return `Posted ${monthsDiff} month(s) ago`
@@ -127,6 +146,7 @@ $(document).ready(function() {
     }
   }
 
+  // prevent XSS attack
   function escape(str) {
     var div = document.createElement('div');
     div.appendChild(document.createTextNode(str));

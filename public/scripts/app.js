@@ -1,3 +1,5 @@
+"use strict";
+
 $(document).ready(function() {
   // variables defined for counting new tweet characters
   // and the maximum chars every tweet has should be 140 characters
@@ -143,6 +145,7 @@ $(document).ready(function() {
     if(secondsDiff > 1){
       return `Posted ${secondsDiff} second(s) ago`
     } else {
+      // to prevent displaying "NaN" affect user experience
       return `Posted ${secondsDiff} second(s) ago`
     }
   }

@@ -20,7 +20,7 @@
 
 .new-tweet textarea {
   width: 100%;
-  height: 100px;
+  height: 60px;
 }
 
 .new-tweet input, span {
@@ -106,8 +106,8 @@
   float: right;
   margin-right: 5px;
   color: #00ba9d;
-  /*opacity: 1;
-  transition: 0.3s;*/
+  opacity: 0;
+  transition: 0.3s;
 }
 
 /* For fade in amination */
@@ -115,5 +115,16 @@
   opacity: 1;
 }
 
+.tweet:hover .tweet-footer .fa-flag{
+  opacity: 1;
+}
+
+.tweet:hover .tweet-footer .fa-retweet{
+  opacity: 1;
+}
+
+.tweet:hover .tweet-footer .fa-heart{
+  opacity: 1;
+}
 
 

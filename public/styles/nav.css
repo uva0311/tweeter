@@ -48,10 +48,13 @@
 /* responsive: remove app name when the screen is getting too small */
 /* as well increass the size of compose button */
 @media(max-width: 768px) {
+  #compose {
+    width: 30%;
+  }
+}
+
+@media(max-width: 644px) {
   #nav-bar .header {
     display: none;
-  }
-  #compose {
-    width: 50%;
   }
 }

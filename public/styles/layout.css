@@ -25,10 +25,24 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- main {
+main {
   position: relative;
   width: 450px;
   margin: 80px auto 0;
   background-color: #ffffff;
   padding-bottom: 50px;
+}
+
+/* responsive: making the whole body of tweet bigger */
+@media(max-width: 768px) {
+  main {
+    width: 80%;
+  }
+}
+
+/* for even smaller devices */
+@media(max-width: 644px) {
+  main {
+    width: 100%;
+  }
  }

@@ -20,4 +20,8 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Screenshots
 
+!["Screenshot of tweet UI"](https://github.com/uva0311/tweeter/blob/master/docs/UI.png)
+!["Screenshot of compose new tweet"](https://github.com/uva0311/tweeter/blob/master/docs/make_tweet.png)
+!["Screenshot of post new tweet"](https://github.com/uva0311/tweeter/blob/master/docs/new_tweet.png)
+
 

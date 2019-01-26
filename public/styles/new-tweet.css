@@ -158,7 +158,7 @@
     width: 60px;
   }
 }
-/* show no username */
+/* responsive design */
 @media(min-width: 645px) and (max-width: 750px) {
   .tweet-header .name {
     font-size: 1em;
